@@ -52,7 +52,7 @@ public class TSVReader {
                     date = df.parse(datavalue[3]);
                     gueltig_bis = new java.sql.Timestamp(date.getTime());
                 } else {
-                    gueltig_bis = Timestamp.valueOf("2099-12-31 00:00:00.0");
+                    gueltig_bis = Timestamp.valueOf("3999-12-31 00:00:00.0");
                 }
 
                 char Referenz = datavalue[4].charAt(0);

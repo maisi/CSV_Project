@@ -25,7 +25,7 @@ public class Processor {
                             if (!(updateBean.getGueltig_bis().before(new Date()))) {
                                 //close old entry and create new one
                                 statements.add(WriteUPDATE.createUPDATE(currentBean, updateBean));
-                                statements.add(WriteUPDATE.createINSERT(currentBean, updateBean));
+                                statements.addAll(WriteUPDATE.createINSERT(currentBean, updateBean));
                             }
 
                         }

@@ -30,35 +30,27 @@ public class WriteINSERT {
 
         String sqlStatement = String.format(sqlINSERTnewStmt, newBean.getCode(), dateFormat.format(newBean.getGueltig_von()), dateFormat.format(newBean.getGueltig_bis()));
         statements.add(sqlStatement);
-        //System.out.println(sqlStatement);
 
         String sqlStatement1 = String.format(sqlADDinsert, newBean.getZusatz());
         statements.add(sqlStatement1);
-        //System.out.println(sqlStatement1);
 
         String sqlStatement2 = String.format(sqlREFinsert, newBean.getReferenz());
         statements.add(sqlStatement2);
-        //System.out.println(sqlStatement2);
 
         String sqlStatement3 = String.format(sqISSUEinsert, newBean.getAusstellung());
         statements.add(sqlStatement3);
-        //System.out.println(sqlStatement3);
 
         String sqlStatement4 = String.format(sqlVALinsert, newBean.getGueltigkeitsende());
         statements.add(sqlStatement4);
-        //System.out.println(sqlStatement4);
 
         String sqlStatement5 = String.format(sqlDETinsert, newBean.getDetail());
         statements.add(sqlStatement5);
-        //System.out.println(sqlStatement5);
 
         String sqlStatement6 = String.format(sqlVALUinsert, newBean.getWert());
         statements.add(sqlStatement6);
-        //System.out.println(sqlStatement6);
 
         String sqlStatement7 = String.format(sqlUOMinsert, newBean.getMaﬂeinheit());
         statements.add(sqlStatement7);
-        //System.out.println(sqlStatement7);
 
         String sqlStatement8 = String.format(sqlTRANSinsert, newBean.getBedeutung());
         statements.add(sqlStatement8);
