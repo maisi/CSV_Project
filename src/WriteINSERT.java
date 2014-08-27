@@ -18,7 +18,11 @@ public class WriteINSERT {
             " (select LOASID from mic_lov_attribute where loalovsid=(select LOVSID from mic_lov where lovcountry = 'DE' and LOVGROUP = 'UNTERLAGEN_AES') and LOAATTRIBUTE='VALUE_REQUIRED'),'%s');";
     private static final String sqlUOMinsert = "INSERT INTO mic_lov_value_attribute (lvasid,lvalvvsid,lvaloasid,lvavalue) VALUES(mic_lov_value_attribute_seq.nextval,mic_lov_value_seq.currval," +
             " (select LOASID from mic_lov_attribute where loalovsid=(select LOVSID from mic_lov where lovcountry = 'DE' and LOVGROUP = 'UNTERLAGEN_AES') and LOAATTRIBUTE='UOM_REQUIRED'),'%s');";
+    private static final String sqlTRANSinsert = "INSERT INTO MIC_LOV_TRANSLATION(LOTSID,LOTREFSID,LOTREFTYPE,LOTLANGUAGE,LOTTRANSLATION) VALUES (mic_lov_translation_seq.nextval,mic_lov_value_seq.currval,'LVV','DEU','%s');";
+
+
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+
 
     public static ArrayList<String> createINSERT(Bean newBean) {
 
@@ -55,6 +59,9 @@ public class WriteINSERT {
         String sqlStatement7 = String.format(sqlUOMinsert, newBean.getMaﬂeinheit());
         statements.add(sqlStatement7);
         //System.out.println(sqlStatement7);
+
+        String sqlStatement8 = String.format(sqlTRANSinsert, newBean.getBedeutung());
+        statements.add(sqlStatement8);
 
         return statements;
     }

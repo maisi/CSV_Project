@@ -17,16 +17,17 @@ public class Processor {
     public static ArrayList<String> createStatement(ArrayList<Bean> currentList, ArrayList<Bean> updateList) {
 
         ArrayList<String> statements = new ArrayList<String>();
-        for (int i = 0; i < updateList.size(); i++) {
-            Bean updateBean = updateList.get(i);
-            for (int j = 0; j < currentList.size(); j++) {
-                Bean currentBean = currentList.get(j);
+        for (Bean updateBean : updateList) {
+            for (Bean currentBean : currentList) {
                 if (currentBean.getCode().equals(updateBean.getCode())) {
                     if (!(currentBean.getGueltig_von().after(updateBean.getGueltig_von()))) {
                         if (!(currentBean.getGueltig_bis().before(updateBean.getGueltig_von()))) {
-                            //close old entry and create new one
-                            statements.add(WriteUPDATE.createUPDATE(currentBean, updateBean));
-                            statements.add(WriteUPDATE.createINSERT(currentBean, updateBean));
+                            if (!(updateBean.getGueltig_bis().before(new Date()))) {
+                                //close old entry and create new one
+                                statements.add(WriteUPDATE.createUPDATE(currentBean, updateBean));
+                                statements.add(WriteUPDATE.createINSERT(currentBean, updateBean));
+                            }
+
                         }
 
                     }

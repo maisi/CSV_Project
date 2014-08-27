@@ -78,7 +78,7 @@ public class Bean {
         this.LVVSID = LVVSID;
     }
 
-    ;
+
 
     public String getCode() {
         return Code;
@@ -225,14 +225,12 @@ public class Bean {
 
         Bean bean = (Bean) o;
 
-        if (!Code.equals(bean.Code)) return false;
+        return Code.equals(bean.Code);
 
-        return true;
     }
 
     @Override
     public int hashCode() {
-        int result = Code.hashCode();
-        return result;
+        return Code.hashCode();
     }
 }

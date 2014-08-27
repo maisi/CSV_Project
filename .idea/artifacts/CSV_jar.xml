@@ -2,7 +2,7 @@
   <artifact type="jar" name="CSV:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/CSV_jar</output-path>
     <root id="archive" name="CSV.jar">
-      <element id="module-output" name="CSV" />
+      <element id="module-output" name="MIC_LOV" />
     </root>
   </artifact>
 </component>

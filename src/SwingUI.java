@@ -26,12 +26,12 @@ public class SwingUI {
         JFrame.setSize(440, 400);
         JFrame.setVisible(true);
         JFrame.setResizable(true);
-        JFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
         JFrame.getContentPane().setLayout(null);
 
         JOptionPane jOptionPane = new JOptionPane();
         jOptionPane.showInputDialog(JFrame, "<html>Bitte das Query im SQLDeveloper laufen lassen und<br/>als 'text' exportieren ohne Einrahmung -> Kundendaten</html>", "\n" +
-                "select LVVVALUE,TO_CHAR(LVVVALIDFROM, 'dd/mm/yyyy hh:MM:ss')LVVVALIDFROM,TO_CHAR(LVVVALIDTO, 'dd/mm/yyyy hh:MM:ss')LVVVALIDTO,LOAATTRIBUTE,LVAVALUE,LOTTRANSLATION,LVVSID,LOVSID,LVASID,LOASID from mic_lov,mic_lov_value,mic_lov_attribute,mic_lov_value_attribute,mic_lov_translation\n" +
+                "select LVVVALUE,TO_CHAR(LVVVALIDFROM, 'dd.mm.yyyy hh:MM:ss')LVVVALIDFROM,TO_CHAR(LVVVALIDTO, 'dd.mm.yyyy hh:MM:ss')LVVVALIDTO,LOAATTRIBUTE,LVAVALUE,LOTTRANSLATION,LVVSID,LOVSID,LVASID,LOASID from mic_lov,mic_lov_value,mic_lov_attribute,mic_lov_value_attribute,mic_lov_translation\n" +
                 "where lovsid=lvvlovsid\n" +
                 "and loalovsid=lovsid\n" +
                 "and lvalvvsid=lvvsid\n" +
@@ -120,7 +120,7 @@ public class SwingUI {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
         int result = fileChooser.showOpenDialog(JFrame);
-        File selectedFile = null;
+        File selectedFile;
         if (result == JFileChooser.APPROVE_OPTION) {
             selectedFile = fileChooser.getSelectedFile();
             System.out.println("Selected file: " + selectedFile.getAbsolutePath());

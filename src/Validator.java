@@ -3,7 +3,7 @@ import java.io.*;
 public class Validator {
 
     public static boolean validate(String filename, int filetype) throws FileNotFoundException, UnsupportedEncodingException {
-        BufferedReader bReader = null;
+        BufferedReader bReader;
 
         bReader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(filename), "ISO-8859-15"));
@@ -18,23 +18,15 @@ public class Validator {
         String datavalue[] = line.split("\t");
 
         if (filetype == 1) { //ATLAS file
-            if (datavalue[0].equals("# Code")) {
-                return validate(filename);
-            } else return false;
+            return datavalue[0].equals("# Code") && validate(filename);
 
-        } else if (filetype == 2) { //DB Export
-            if ((datavalue[0].equals("LVVVALUE"))) {
-                return validate(filename);
-            } else return false;
-        } else {
-            return false;
-        }
+        } else return filetype == 2 && (datavalue[0].equals("LVVVALUE")) && validate(filename);
     }
 
     //checks if files have the correct format
     public static boolean validate(String filename) throws FileNotFoundException, UnsupportedEncodingException {
 
-        BufferedReader bReader = null;
+        BufferedReader bReader;
 
         bReader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(filename), "ISO-8859-15"));
