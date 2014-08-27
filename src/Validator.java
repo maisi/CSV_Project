@@ -15,7 +15,12 @@ public class Validator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String datavalue[] = line.split("\t");
+        String datavalue[] = new String[0];
+        if (line != null) {
+            datavalue = line.split("\t");
+        } else {
+            return false;
+        }
 
         if (filetype == 1) { //ATLAS file
             return datavalue[0].equals("# Code") && validate(filename);
@@ -37,7 +42,12 @@ public class Validator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String datavalue[] = line.split("\t");
+        String datavalue[] = new String[0];
+        if (line != null) {
+            datavalue = line.split("\t");
+        } else {
+            return false;
+        }
 
         if (!((datavalue.length == 12) || (datavalue.length == 10))) {
             return false;

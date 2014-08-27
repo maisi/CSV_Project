@@ -74,7 +74,7 @@ public class Main {
 
 /*
 
-select LVVVALUE,TO_CHAR(LVVVALIDFROM, 'dd/mm/yyyy hh:MM:ss'),TO_CHAR(LVVVALIDTO, 'dd/mm/yyyy hh:MM:ss'),LOAATTRIBUTE,LVAVALUE,LOTTRANSLATION,LVVSID,LOVSID,LVASID,LOASID from mic_lov,mic_lov_value,mic_lov_attribute,mic_lov_value_attribute,mic_lov_translation
+select LVVVALUE,TO_CHAR(LVVVALIDFROM, 'dd.mm.yyyy hh:MM:ss'),TO_CHAR(LVVVALIDTO, 'dd.mm.yyyy hh:MM:ss'),LOAATTRIBUTE,LVAVALUE,LOTTRANSLATION,LVVSID,LOVSID,LVASID,LOASID from mic_lov,mic_lov_value,mic_lov_attribute,mic_lov_value_attribute,mic_lov_translation
 where lovsid=lvvlovsid
 and loalovsid=lovsid
 and lvalvvsid=lvvsid

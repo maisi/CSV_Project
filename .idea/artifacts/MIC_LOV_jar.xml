@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MIC_LOV:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MIC_LOV_jar</output-path>
+    <root id="archive" name="MIC_LOV.jar">
+      <element id="module-output" name="MIC_LOV" />
+    </root>
+  </artifact>
+</component>
