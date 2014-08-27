@@ -20,12 +20,14 @@ public class Processor {
         for (Bean updateBean : updateList) {
             for (Bean currentBean : currentList) {
                 if (currentBean.getCode().equals(updateBean.getCode())) {
-                    if (!(currentBean.getGueltig_von().after(updateBean.getGueltig_von()))) {
-                        if (!(currentBean.getGueltig_bis().before(updateBean.getGueltig_von()))) {
-                            if (!(updateBean.getGueltig_bis().before(new Date()))) {
+                    if (!(currentBean.getGueltig_von().after(updateBean.getGueltig_von()))) {  //Test dass neuer eintrag wirklich neuer ist
+                        if (!(currentBean.getGueltig_bis().before(updateBean.getGueltig_von()))) { //Test dass bestehendes bis datum nicht überschrieben wird durch neueren eintrag
+                            if (!(updateBean.getGueltig_bis().before(new Date()))) {  //Test dass neuer eintrag nicht schon beendet ist (verhindert dass alte einträge geladen werden
                                 //close old entry and create new one
                                 statements.add(WriteUPDATE.createUPDATE(currentBean, updateBean));
                                 statements.addAll(WriteUPDATE.createINSERT(currentBean, updateBean));
+                            } else {
+                                statements.add(WriteUPDATE.createUPDATE2(currentBean, updateBean));
                             }
 
                         }

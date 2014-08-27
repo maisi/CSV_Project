@@ -28,6 +28,11 @@ public class WriteUPDATE {
 
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
+    public static String createUPDATE2(Bean oldBean, Bean newBean) {
+
+        return String.format(sqlUPDATEStatementTemplate, dateFormat.format(newBean.getGueltig_bis()), oldBean.getLVVSID());
+    }
+
     public static String createUPDATE(Bean oldBean, Bean newBean) {
 
 
@@ -36,9 +41,7 @@ public class WriteUPDATE {
         cal.add(Calendar.DAY_OF_MONTH, -1);
         Timestamp timestamp = new Timestamp(cal.getTimeInMillis());
 
-        String sqlStatement = String.format(sqlUPDATEStatementTemplate, dateFormat.format(timestamp), oldBean.getLVVSID());
-
-        return sqlStatement;
+        return String.format(sqlUPDATEStatementTemplate, dateFormat.format(timestamp), oldBean.getLVVSID());
     }
 
     public static ArrayList<String> createINSERT(Bean oldBean, Bean newBean) {

@@ -63,7 +63,7 @@ public class DSVReader {
                     date = df.parse(datavalue[2]);
                     gueltig_bis = new java.sql.Timestamp(date.getTime());
                 } else {
-                    gueltig_bis = Timestamp.valueOf("3999-12-31 00:00:00.0");
+                    gueltig_bis = Timestamp.valueOf("3999-12-31 23:59:59.0");
                 }
 
                 bean.setGueltig_bis(gueltig_bis);
