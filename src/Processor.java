@@ -19,7 +19,7 @@ public class Processor {
         ArrayList<String> statements = new ArrayList<String>();
         for (Bean updateBean : updateList) {
             for (Bean currentBean : currentList) {
-                if (currentBean.getCode().equals(updateBean.getCode())) {
+                if (currentBean.equals(updateBean)) {
                     if (!(currentBean.getGueltig_von().after(updateBean.getGueltig_von()))) {  //Test dass neuer eintrag wirklich neuer ist
                         //if (!(currentBean.getGueltig_bis().before(updateBean.getGueltig_von()))) { //Test dass bestehendes bis datum nicht überschrieben wird durch neueren eintrag
                             if (!(updateBean.getGueltig_bis().before(new Date()))) {  //Test dass neuer eintrag nicht schon beendet ist (verhindert dass alte einträge geladen werden
@@ -29,20 +29,23 @@ public class Processor {
                             } else {
                                 //close old entry without creating a new one
                                 //will update old entry to the latest entry in the zoll file
-                                System.out.println(updateBean.getGueltig_bis() + " " + currentBean.getGueltig_bis());
+                                //System.out.println(updateBean.getGueltig_bis() + " " + currentBean.getGueltig_bis());
                                 statements.add(WriteUPDATE.createUPDATE2(currentBean, updateBean));
                             }
 
                         // }
 
                     }
+                } else {
+                    //System.out.println(currentBean.toString());
+                    //System.out.println(updateBean.toString());
                 }
             }
             //create new entry if no entry exists
             if (!currentList.contains(updateBean)) {
-                if (updateBean.getGueltig_bis().after(new Date())) {
+                //if (!(updateBean.getGueltig_bis().before(new Date()))) {
                     statements.addAll(WriteINSERT.createINSERT(updateBean));
-                }
+                //}
             }
         }
         return statements;

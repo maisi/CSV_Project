@@ -31,7 +31,7 @@ public class SwingUI {
 
         JOptionPane jOptionPane = new JOptionPane();
         jOptionPane.showInputDialog(JFrame, "<html>Bitte das Query im SQLDeveloper laufen lassen und<br/>als 'text' exportieren ohne Einrahmung -> Kundendaten</html>", "\n" +
-                "select LVVVALUE,TO_CHAR(LVVVALIDFROM, 'dd.mm.yyyy hh:MM:ss')LVVVALIDFROM,TO_CHAR(LVVVALIDTO, 'dd.mm.yyyy hh:MM:ss')LVVVALIDTO,LOAATTRIBUTE,LVAVALUE,LOTTRANSLATION,LVVSID,LOVSID,LVASID,LOASID from mic_lov,mic_lov_value,mic_lov_attribute,mic_lov_value_attribute,mic_lov_translation\n" +
+                "select LVVVALUE,TO_CHAR(LVVVALIDFROM, 'dd.mm.yyyy HH24:MI:ss')LVVVALIDFROM,TO_CHAR(LVVVALIDTO, 'dd.mm.yyyy HH24:MI:ss')LVVVALIDTO,LOAATTRIBUTE,LVAVALUE,LOTTRANSLATION,LVVSID,LOVSID,LVASID,LOASID from mic_lov,mic_lov_value,mic_lov_attribute,mic_lov_value_attribute,mic_lov_translation\n" +
                 "where lovsid=lvvlovsid\n" +
                 "and loalovsid=lovsid\n" +
                 "and lvalvvsid=lvvsid\n" +

@@ -1,7 +1,4 @@
 # Code	Qualifikator	gültig von	gültig bis	Referenz	Zusatz	Detail	Ausstellung	Gültigkeitsende	Wert	Maßeinheit	Bedeutung
 1CCC		20111119000000		O	O	N	N	N	N	N	Begleitpapier gem. Art. 121 Buchstabe f) Ziffer vii) VO (EG) Nr. 1234/2007 (ABl. L 299 vom 16.11.2007) über die Erzeugung und den Verkehr von Bruteiern und Küken von Hausgeflügel
-2AAF		20100627000000		R	N	N	R	R	N	N	Vorherige Bewilligung (Einfuhrgenehmigung)
-2ABA		20111119000000		O	O	N	N	N	N	N	Befreiung von der Lizenzpflicht gem. Art. 4 VO (EG) Nr.376/2008, ausgenommen Vorgänge, die sich auf Mengen beziehen, die höchstens den im Anhang II der VO aufgeführten Mengen entsprechen.
-3AAL		20100101000000	20110101120200	N	R	N	R	N	N	N	Ausfuhrlizenz
-TEST		20100123000000	20101130235959	N	R	N	R	N	N	N	Ausfuhrlizenz
-TEST		20101201000000	20130831235959	N	R	N	R	N	N	N	Ausfuhrlizenz
+2AAF		20110627000000	20120101120200	R	N	N	R	R	N	N	Vorherige Bewilligung (Einfuhrgenehmigung)
+2AAF		20120101120200		R	N	N	R	R	N	N	Vorherige Bewilligung (Einfuhrgenehmigung)

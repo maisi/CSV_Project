@@ -34,39 +34,6 @@ public class Bean {
         Bedeutung = bedeutung;
     }
 
-    public Bean(String code, Timestamp gueltig_von, Timestamp gueltig_bis, char referenz, char zusatz, char detail, char ausstellung, char gueltigkeitsende, char wert, char maﬂeinheit, String bedeutung) {
-        Code = code;
-        this.gueltig_von = gueltig_von;
-        this.gueltig_bis = gueltig_bis;
-        Referenz = referenz;
-        Zusatz = zusatz;
-        Detail = detail;
-        Ausstellung = ausstellung;
-        Gueltigkeitsende = gueltigkeitsende;
-        Wert = wert;
-        Maﬂeinheit = maﬂeinheit;
-        Bedeutung = bedeutung;
-    }
-
-    public Bean(int LVVSID, int LOVSID, int LOASID, int LVASID, String code, String qualifikator, Timestamp gueltig_von, Timestamp gueltig_bis, char referenz, char zusatz, char detail, char ausstellung, char gueltigkeitsende, char wert, char maﬂeinheit, String bedeutung) {
-        this.LVVSID = LVVSID;
-        this.LOVSID = LOVSID;
-        this.LOASID = LOASID;
-        this.LVASID = LVASID;
-        Code = code;
-        Qualifikator = qualifikator;
-        this.gueltig_von = gueltig_von;
-        this.gueltig_bis = gueltig_bis;
-        Referenz = referenz;
-        Zusatz = zusatz;
-        Detail = detail;
-        Ausstellung = ausstellung;
-        Gueltigkeitsende = gueltigkeitsende;
-        Wert = wert;
-        Maﬂeinheit = maﬂeinheit;
-        Bedeutung = bedeutung;
-    }
-
     public Bean() {
     }
 
@@ -221,16 +188,66 @@ public class Bean {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Bean)) return false;
 
         Bean bean = (Bean) o;
+        if (Code != null ? !Code.equals(bean.Code) : bean.Code != null) return false;
+        if (Ausstellung != '\0' && bean.getAusstellung() != '\0') {
+            if (Ausstellung != (bean.Ausstellung)) {
+                System.out.println("Ausstellung false :" + Ausstellung + "soll:" + bean.getAusstellung());
+                return false;
+            }
+        }
+        if (Zusatz != '\0' && bean.getZusatz() != '\0') {
+            if (Zusatz != (bean.Zusatz)) {
+                System.out.println("Zusatz false " + Zusatz + "soll:" + bean.getZusatz());
+                return false;
+            }
+        }
+        if (Maﬂeinheit != '\0' && bean.getMaﬂeinheit() != '\0') {
+            if (Maﬂeinheit != (bean.Maﬂeinheit)) {
+                System.out.println("Maﬂeinheit false" + Maﬂeinheit + "soll:" + bean.getMaﬂeinheit());
+                return false;
+            }
+        }
+        if (Wert != '\0' && bean.getWert() != '\0') {
+            if (Wert != (bean.Wert)) {
+                System.out.println("Wert false" + Wert + "soll:" + bean.getWert());
+                return false;
+            }
+        }
+        if (Referenz != '\0' && bean.getReferenz() != '\0') {
+            if (Referenz != (bean.Referenz)) {
+                System.out.println("Referenz false" + Referenz + "soll:" + bean.getReferenz());
+                return false;
+            }
+        }
+        if (Gueltigkeitsende != '\0' && bean.getGueltigkeitsende() != '\0') {
+            if (Gueltigkeitsende != (bean.Gueltigkeitsende)) {
+                System.out.println("Gueltigkeitsende false" + Gueltigkeitsende + "soll:" + bean.getGueltigkeitsende());
+                return false;
+            }
+        }
+        if (Detail != '\0' && bean.getDetail() != '\0') {
+            if (Detail != (bean.Detail)) {
+                System.out.println("Detail false" + Detail + "soll:" + bean.getDetail());
+                return false;
+            }
+        }
+        if (Bedeutung != null && bean.getBedeutung() != null) {
+            if (!(Bedeutung.equals(bean.Bedeutung))) {
+                System.out.println("Bedeutung false" + Code + "soll:" + bean.getCode());
+                return false;
+            }
+        }
 
-        return Code.equals(bean.Code);
 
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Code.hashCode();
+        int result = Code != null ? Code.hashCode() : 0;
+        return result;
     }
 }

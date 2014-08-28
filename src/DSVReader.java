@@ -86,9 +86,8 @@ public class DSVReader {
                 }
 
                 String bedeutung = datavalue[5];
-                if (bedeutung.contains("'")) {
-                    bedeutung = bedeutung.replaceAll("'", "''");
-                }
+                bedeutung = bedeutung.replaceAll("'", "''");
+
                 bean.setBedeutung(bedeutung);
                 bean.setLVVSID(Integer.parseInt(datavalue[6]));
                 bean.setLOVSID(Integer.parseInt(datavalue[7]));
