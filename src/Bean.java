@@ -46,7 +46,6 @@ public class Bean {
     }
 
 
-
     public String getCode() {
         return Code;
     }
@@ -192,54 +191,56 @@ public class Bean {
 
         Bean bean = (Bean) o;
         if (Code != null ? !Code.equals(bean.Code) : bean.Code != null) return false;
-        if (Ausstellung != '\0' && bean.getAusstellung() != '\0') {
+
+    /*    if (Ausstellung != '\0' && bean.getAusstellung() != '\0') {
             if (Ausstellung != (bean.Ausstellung)) {
-                System.out.println("Ausstellung false :" + Ausstellung + "soll:" + bean.getAusstellung());
+                //System.out.println("Ausstellung false :" + Ausstellung + "soll:" + bean.getAusstellung());
                 return false;
             }
         }
         if (Zusatz != '\0' && bean.getZusatz() != '\0') {
             if (Zusatz != (bean.Zusatz)) {
-                System.out.println("Zusatz false " + Zusatz + "soll:" + bean.getZusatz());
+                //System.out.println("Zusatz false " + Zusatz + "soll:" + bean.getZusatz());
                 return false;
             }
         }
         if (Maßeinheit != '\0' && bean.getMaßeinheit() != '\0') {
             if (Maßeinheit != (bean.Maßeinheit)) {
-                System.out.println("Maßeinheit false" + Maßeinheit + "soll:" + bean.getMaßeinheit());
+                //System.out.println("Maßeinheit false" + Maßeinheit + "soll:" + bean.getMaßeinheit());
                 return false;
             }
         }
         if (Wert != '\0' && bean.getWert() != '\0') {
             if (Wert != (bean.Wert)) {
-                System.out.println("Wert false" + Wert + "soll:" + bean.getWert());
+                //System.out.println("Wert false" + Wert + "soll:" + bean.getWert());
                 return false;
             }
         }
         if (Referenz != '\0' && bean.getReferenz() != '\0') {
             if (Referenz != (bean.Referenz)) {
-                System.out.println("Referenz false" + Referenz + "soll:" + bean.getReferenz());
+                //System.out.println("Referenz false" + Referenz + "soll:" + bean.getReferenz());
                 return false;
             }
         }
         if (Gueltigkeitsende != '\0' && bean.getGueltigkeitsende() != '\0') {
             if (Gueltigkeitsende != (bean.Gueltigkeitsende)) {
-                System.out.println("Gueltigkeitsende false" + Gueltigkeitsende + "soll:" + bean.getGueltigkeitsende());
+                //System.out.println("Gueltigkeitsende false" + Gueltigkeitsende + "soll:" + bean.getGueltigkeitsende());
                 return false;
             }
         }
         if (Detail != '\0' && bean.getDetail() != '\0') {
             if (Detail != (bean.Detail)) {
-                System.out.println("Detail false" + Detail + "soll:" + bean.getDetail());
+                //System.out.println("Detail false" + Detail + "soll:" + bean.getDetail());
                 return false;
             }
         }
+
         if (Bedeutung != null && bean.getBedeutung() != null) {
             if (!(Bedeutung.equals(bean.Bedeutung))) {
-                System.out.println("Bedeutung false" + Code + "soll:" + bean.getCode());
+                //System.out.println("Bedeutung false" +Code +" "+ Bedeutung + "soll:" + bean.getCode()+" "+bean.getBedeutung());
                 return false;
             }
-        }
+        }*/
 
 
         return true;
@@ -248,6 +249,15 @@ public class Bean {
     @Override
     public int hashCode() {
         int result = Code != null ? Code.hashCode() : 0;
+        result = 31 * result + (gueltig_von != null ? gueltig_von.hashCode() : 0);
+        result = 31 * result + (gueltig_bis != null ? gueltig_bis.hashCode() : 0);
+        result = 31 * result + (int) Referenz;
+        result = 31 * result + (int) Zusatz;
+        result = 31 * result + (int) Detail;
+        result = 31 * result + (int) Ausstellung;
+        result = 31 * result + (int) Gueltigkeitsende;
+        result = 31 * result + (int) Wert;
+        result = 31 * result + (int) Maßeinheit;
         return result;
     }
 }

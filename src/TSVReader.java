@@ -17,7 +17,7 @@ public class TSVReader {
         BufferedReader bReader = null;
         try {
             bReader = new BufferedReader(
-                    new InputStreamReader(new FileInputStream(filename), "ISO-8859-15"));
+                    new InputStreamReader(new FileInputStream(filename), "CP1252"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -64,8 +64,6 @@ public class TSVReader {
                 char Maßeinheit = datavalue[10].charAt(0);
                 String Bedeutung = datavalue[11];
                 Bedeutung = Bedeutung.replaceAll("'", "''");
-
-
 
 
                 Bean bean = new Bean(Code, Qualifikator, gueltig_von, gueltig_bis, Referenz, Zusatz, Detail, Ausstellung, Gültigkeitsende, Wert, Maßeinheit, Bedeutung);

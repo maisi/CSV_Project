@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/src/Bean.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/DSVReader.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/Main.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/TSVReader.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/Validator.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/WriteINSERT.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/WriteUPDATE.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/Bean.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/DSVReader.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/Main.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/Processor.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/SwingUI.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/TSVReader.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/Validator.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/WriteINSERT.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/WriteOut.java" charset="ISO-8859-15" />
+    <file url="file://$PROJECT_DIR$/src/WriteUPDATE.java" charset="ISO-8859-15" />
   </component>
 </project>
 

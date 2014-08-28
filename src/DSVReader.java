@@ -17,7 +17,7 @@ public class DSVReader {
         BufferedReader bReader = null;
         try {
             bReader = new BufferedReader(
-                    new InputStreamReader(new FileInputStream(filename), "ISO-8859-15"));
+                    new InputStreamReader(new FileInputStream(filename), "CP1252"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -67,7 +67,7 @@ public class DSVReader {
                 }
 
                 bean.setGueltig_bis(gueltig_bis);
-                System.out.println(gueltig_bis);
+
 
                 String Attribut = datavalue[3];
                 char Value = datavalue[4].charAt(0);

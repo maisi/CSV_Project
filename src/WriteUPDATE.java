@@ -25,7 +25,6 @@ public class WriteUPDATE {
     private static final String sqlTRANSinsert = "INSERT INTO MIC_LOV_TRANSLATION(LOTSID,LOTREFSID,LOTREFTYPE,LOTLANGUAGE,LOTTRANSLATION) VALUES (mic_lov_translation_seq.nextval,mic_lov_value_seq.currval,'LVV','DEU','%s');";
 
 
-
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public static String createUPDATE2(Bean oldBean, Bean newBean) {
