@@ -52,7 +52,7 @@ public class TSVReader {
                     date = df.parse(datavalue[3]);
                     gueltig_bis = new java.sql.Timestamp(date.getTime());
                 } else {
-                    gueltig_bis = Timestamp.valueOf("3999-12-31 23:59:59.0");
+                    gueltig_bis = Timestamp.valueOf("3999-12-31 00:00:00.0");
                 }
 
                 char Referenz = datavalue[4].charAt(0);
@@ -63,6 +63,9 @@ public class TSVReader {
                 char Wert = datavalue[9].charAt(0);
                 char Maßeinheit = datavalue[10].charAt(0);
                 String Bedeutung = datavalue[11];
+                Bedeutung = Bedeutung.replaceAll("'", "''");
+
+
 
 
                 Bean bean = new Bean(Code, Qualifikator, gueltig_von, gueltig_bis, Referenz, Zusatz, Detail, Ausstellung, Gültigkeitsende, Wert, Maßeinheit, Bedeutung);

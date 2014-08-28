@@ -36,7 +36,7 @@ public class DSVReader {
                     continue;
                 }
 
-                SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+                SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy kk:mm:ss");
 
                 String Code = datavalue[0];
 
@@ -63,11 +63,11 @@ public class DSVReader {
                     date = df.parse(datavalue[2]);
                     gueltig_bis = new java.sql.Timestamp(date.getTime());
                 } else {
-                    gueltig_bis = Timestamp.valueOf("3999-12-31 23:59:59.0");
+                    gueltig_bis = Timestamp.valueOf("3999-12-31 00:00:00.0");
                 }
 
                 bean.setGueltig_bis(gueltig_bis);
-
+                System.out.println(gueltig_bis);
 
                 String Attribut = datavalue[3];
                 char Value = datavalue[4].charAt(0);
@@ -85,7 +85,11 @@ public class DSVReader {
                     bean.setAusstellung(Value);
                 }
 
-                bean.setBedeutung(datavalue[5]);
+                String bedeutung = datavalue[5];
+                if (bedeutung.contains("'")) {
+                    bedeutung = bedeutung.replaceAll("'", "''");
+                }
+                bean.setBedeutung(bedeutung);
                 bean.setLVVSID(Integer.parseInt(datavalue[6]));
                 bean.setLOVSID(Integer.parseInt(datavalue[7]));
                 bean.setLVASID(Integer.parseInt(datavalue[8]));
